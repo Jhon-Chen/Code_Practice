@@ -6,12 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-    function fn (){
-        var str = 'aa'
-        num = 10
+    function fn1(){
+        alert(1)
     }
-    fn()
-    alert(num)
+    ;;(function(){
+        alert(2);
+        fn1();
+    })()
+    !function(){
+        alert(3);
+        fn1();
+    }()
+    ~function(){
+        alert(4);
+        fn1();
+    }()
+    
     </script>
 </head>
 <body>

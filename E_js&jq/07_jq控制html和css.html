@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jQuery/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // 内容 html() -- 用法：如果写参数表示修改；不写参数表示访问
+        // alert($('div').html())
+        // $('div').html('<p>aaaaa</p>')
+        // $('div').html('')
+
+        // css  css() -- 单属性操作 和 多属性操作
+        // 1、单属性：控制 和  访问
+        // $('div').css('color', 'red')
+        // alert($('div').css('color'))
+        // 2、多属性  -- 一次性控制多个css键值对  字典的形式
+        $('div').css({color:'red', 'font-size':'60px'})
+    })
+    </script>
+</head>
+<body>
+    <div>测试JQ</div>
+</body>
+</html>

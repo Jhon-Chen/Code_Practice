@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jQuery/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        $('button').click(function(){
+            // 单击的这个标签（this）变css为绿色
+            // $(this).css('background', 'green')
+            // // 这个标签的兄弟标签为红色
+            // $(this).siblings().css('background', '')
+
+            // 链接编程/链式调用 -- 比喻：火车
+            $(this).css('background', 'green').siblings().css('background','red')
+        })
+    })
+    </script>
+</head>
+<body>
+     <!-- 兄弟选择器：排他思想：只许州官放火不许百姓点灯 -->
+    <!-- 很多按钮  点谁谁变绿 -->
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+</body>
+</html>

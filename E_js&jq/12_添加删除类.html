@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 100px;
+        height: 200px;
+        background: rebeccapurple;
+    }
+    </style>
+    <script src="jQuery/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        $('button').click(function(){
+            // $('div').addClass('box')
+            // $('div').removeClass()  // 如果不写参数表示全部删除
+            $('div').toggleClass('box')  //切换类
+        })
+    })
+    </script>
+</head>
+<body>
+    <button>按钮</button>
+    <div class="box">divdivdiv</div>
+</body>
+</html>
