@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 100px;
+        height: 100px;
+        background: green;
+    }
+    </style>
+    <script src="jQuery/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // 作用：自定义动画函数
+        // $('div').animate(字典的形式写css键值对, 时间, 运动曲线, 回调函数) 
+        // ***** css键值对：{k:v,...}   
+        // 以毫秒为单位， 默认值是600
+        // 运动曲线：swing  linear -- 工作中不用, 必须是字符串
+        // 回调函数：匿名函数，表示动画完成之后要执行的命令
+        $('div').eq(0).animate({'width':'800px','height':'300px','background':'pink'},3000,'linear',function(){alert('动画完成了')})
+    })
+    </script>
+</head>
+<body>
+    <div>linear</div>
+</body>
+</html>

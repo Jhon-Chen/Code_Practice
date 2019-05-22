@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        background: greenyellow;
+    }
+    </style>
+    <script src="jQuery/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        $('button').click(function(){
+            // 滑动动画   透明度动画函数
+            // $('div').slideUp()  // 向上卷起 隐藏
+            // $('div').slideDown()   // 向下展开  显示
+            // $('div').stop().slideToggle()
+
+            // $('div').fadeIn()  // 透明显示 淡入
+            // $('div').fadeOut() // 透明隐藏  淡出
+            // $('div').fadeToggle()
+
+            // 设置透明度
+            // $('div').fadeTo(时间, 透明度小数)
+            $('div').fadeOut()
+        })
+    })
+    </script>
+</head>
+<body>
+    <button>点我</button>
+    <div></div>
+</body>
+</html>
