@@ -4,6 +4,7 @@
 from flask import Flask
 app = Flask(__name__)
 
+
 @app.route('/')
 # 这样的函数称为视图函数 这个函数的返回值称为“响应”
 def index():
