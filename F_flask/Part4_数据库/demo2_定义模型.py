@@ -3,7 +3,6 @@
 Flask-SQLAlchemy创建的数据库实例为模型提供了一个基类以及一系列辅助类和辅助函数，可用于定义模型的结构。
 """
 import os
-
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 

@@ -1,8 +1,12 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Jhon">
     <words>
+      <w>noload</w>
+      <w>primaryjoin</w>
+      <w>secondaryjoin</w>
       <w>sqlalchemy</w>
       <w>tablename</w>
+      <w>uselist</w>
     </words>
   </dictionary>
 </component>
