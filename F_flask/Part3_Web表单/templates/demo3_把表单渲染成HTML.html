@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单渲染</title>
+</head>
+<body>
+
+<form method="post">
+    Hello，Stranger！<hr>
+    {{ form.name.label }} {{ form.name() }}<hr>
+    {{ form.submit() }}
+</form>
+
+</body>
+</html>
