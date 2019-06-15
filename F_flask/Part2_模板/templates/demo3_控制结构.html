@@ -31,6 +31,7 @@
 <p>另一种重复使用代码的方法是模板继承，它类似于Python中的类继承，比如有一个叫base.html的基模板</p>
     <p>这是base的衍生模板</p>
 {% extends "base.html" %}
+{#extends 指明这个模板衍生自base.html#}
 {% block title %}Index{% endblock %}
 {% block head %}
     {{ super() }}
