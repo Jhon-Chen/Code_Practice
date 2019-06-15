@@ -12,5 +12,16 @@
     {{ form.submit() }}
 </form>
 
+{% block content %}
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert-warning">
+        {{ message }}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
 </body>
 </html>
