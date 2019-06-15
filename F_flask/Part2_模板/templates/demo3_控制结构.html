@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制结构</title>
+</head>
+<body>
+<div><h2>条件控制语句</h2></div>
+{% if user == 'jhon' %}
+    Hello, {{ user }}!
+{% else %}
+    Hello, Stranger!
+{% endif %}
+
+<div><h2>for循环语句</h2></div>
+<ul>
+    {% for foo in list %}
+        <li>{{ foo }}</li>
+    {% endfor %}
+
+<div><h2>Jinja2还支持宏，类似于Python中的函数</h2></div>
+{% macro render_comment(comment) %}
+    <li>{{ comment + 1 }}</li>
+{% endmacro %}
+<ul>
+    {% for comment in list %}
+        {{ render_comment(comment) }}
+    {% endfor %}
+</ul>
+
+</ul>
+</body>
+</html>

@@ -17,7 +17,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     # render_template函数的第一个参数是模板的文件名。随后的参数都是键值对，表示模板中变量对应的真实值
-    return render_template('demo1.html')
+    return render_template('demo1_初识模板.html')
 
 
 @app.route('/demo/<name>')
