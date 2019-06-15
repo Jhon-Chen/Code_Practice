@@ -19,15 +19,26 @@
     {% endfor %}
 
 <div><h2>Jinja2还支持宏，类似于Python中的函数</h2></div>
-{% macro render_comment(comment) %}
-    <li>{{ comment + 1 }}</li>
-{% endmacro %}
+<p>为了便于使用，一般将宏放在一个单独的文件夹，使用时用import导入</p>
+<p>需要多出重复使用的模板代码可以写入单独的文件，再包含在所有的模板中，使用include</p>
+{% import 'macros.html' as macros %}
 <ul>
     {% for comment in list %}
-        {{ render_comment(comment) }}
+        {{ comment }}
     {% endfor %}
 </ul>
 
-</ul>
+<p>另一种重复使用代码的方法是模板继承，它类似于Python中的类继承，比如有一个叫base.html的基模板</p>
+    <p>这是base的衍生模板</p>
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style></style>
+{% endblock %}
+{% block body %}
+    <h1>Hello World!</h1>
+{% endblock %}
 </body>
+
 </html>
