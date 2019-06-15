@@ -23,6 +23,10 @@ def index():
         return redirect(url_for('index'))
     else:
         # 在这里添加flash消息，并且需要在模板中渲染flash消息
+        """
+        在模板中使用循环是因为在之前的请求循环中每次调用flash()函数时都会生成一个消息，所以有可能有多个消息在排队等待显示。
+        get_flashed_messages() 函数获取的消息在下次调用时不会再次返回，因此Flash消息只显示一次，然后就消失了。
+        """
         flash("Please type your name here")
     if form.name.data != "jhon":
         flash('Welcome Stranger!')
