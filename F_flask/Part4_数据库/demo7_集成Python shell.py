@@ -1,8 +1,13 @@
+"""每次启动shell会话都要导入数据库实例和模型，这真是份枯燥的工作。为了避免一直重复导入，我们恶意做些配置，让Flask-Script的
+shell命令自动导入特定对象。
+若想把对象添加到导入列表中，我们要为shell命令注册一个make_context回调函数。"""
+
 from flask import Flask, flash, session, redirect, url_for, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import Form
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
+from flask_script import Shell
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://jhonchen:2553522375@47.100.200.127:3306/flask_practice'
@@ -39,6 +44,11 @@ class NameForm(Form):
     submit = SubmitField('Submit')
 
 
+def make_shell_context():
+    return dict(app=app, db=db, User=User, Role=Role)
+manager.add_command("shell", shell(make_context=make_shell_context))
+
+
 @app.route('/', methods=['POST', 'GET'])
 def index():
     form = NameForm()
@@ -56,12 +66,8 @@ def index():
     return render_template('demo6.html', form=form, name=session.get('name'), known=session.get('known', False))
 
 
-"""
-在这个修改后的版本中，提交表单后，程序会使用filter_by()查询过滤器在数据库中查找提交的名字。变量known被写入用户会话中，因此重定向
-之后可以把数据传给模板，用来显示自定义的欢迎消息。
-"""
-
 if __name__ == "__main__":
+    app.run(debug=True)
     # 更新现有数据库表的粗暴方式是先删除旧表再重新创建
     db.drop_all()
     db.create_all()
@@ -78,7 +84,7 @@ if __name__ == "__main__":
 
     admin_role.name = 'Administrator'
     db.session.add(admin_role)
-    # db.session.commit()
+    db.session.commit()
 
     db.session.delete(mod_role)
     db.session.commit()
@@ -89,4 +95,3 @@ if __name__ == "__main__":
     User.query.filter_by(role=user_role).all()
 
     str(User.query.filter_by(role=user_role))
-    app.run(debug=True)
