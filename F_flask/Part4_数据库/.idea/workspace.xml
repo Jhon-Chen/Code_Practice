@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8319e35-caf7-4eaa-8c7b-7e8af75e9e06" name="Default Changelist" comment="行操作">
-      <change afterPath="$PROJECT_DIR$/demo7_集成Python shell.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo8_数据库迁移.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/MySQL_python-1.2.5-cp27-none-win32 .whl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Scripts/mysqlclient-1.4.2-cp37-cp37m-win32.whl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo9_数据库操作.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Jhon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Jhon.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo4_数据库操作.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo4_数据库操作.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo6_在视图函数中操作数据库.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo6_在视图函数中操作数据库.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,20 +44,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/demo8_数据库迁移.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="74" column="46" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="46" />
-              <folding>
-                <element signature="e#84#133#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,6 +71,7 @@
         <option value="$PROJECT_DIR$/demo4_数据库操作.py" />
         <option value="$PROJECT_DIR$/demo6_在视图函数中操作数据库.py" />
         <option value="$PROJECT_DIR$/demo8_数据库迁移.py" />
+        <option value="$PROJECT_DIR$/demo9_数据库操作.py" />
       </list>
     </option>
   </component>
@@ -262,7 +247,7 @@
       <workItem from="1560590880379" duration="11254000" />
       <workItem from="1560647004710" duration="1924000" />
       <workItem from="1560649071335" duration="6652000" />
-      <workItem from="1560665474352" duration="13072000" />
+      <workItem from="1560665474352" duration="14943000" />
     </task>
     <task id="LOCAL-00001" summary="配置数据库">
       <created>1560596198586</created>
@@ -296,13 +281,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32902000" />
+    <option name="totallyTimeSpent" value="34773000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119936034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.124200426" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" weight="0.3295099" />
@@ -413,15 +397,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://bcd73ab9-5871-4ddb-ac07-a16cacbefb72/schema/flask_practice/table/roles">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state projectRestartId="6e67bf94-8d9f-4c6e-b1bd-3615df38c25f">
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo5_行操作.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-810">
@@ -432,10 +407,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://bcd73ab9-5871-4ddb-ac07-a16cacbefb72/schema/flask_practice/table/roles">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="6e67bf94-8d9f-4c6e-b1bd-3615df38c25f">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/script.py.mako">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/env.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1847">
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo9_数据库操作.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="745">
+          <caret line="69" column="17" lean-forward="true" selection-start-line="69" selection-start-column="17" selection-end-line="69" selection-end-column="17" />
+          <folding>
+            <element signature="e#84#133#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demo8_数据库迁移.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="74" column="46" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="46" />
+        <state>
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
           <folding>
             <element signature="e#84#133#0" expanded="true" />
           </folding>

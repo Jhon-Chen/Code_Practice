@@ -9,6 +9,7 @@
       <w>sqlalchemy</w>
       <w>tablename</w>
       <w>uselist</w>
+      <w>venv</w>
     </words>
   </dictionary>
 </component>
