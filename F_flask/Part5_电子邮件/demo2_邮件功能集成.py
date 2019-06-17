@@ -25,7 +25,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://jhonchen:2553522375@47.100.200.
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'code'
-
+"""电子邮件的收件人保存在环境变量FLASK_ADMIN中，在程序启动过程中，它会加载到一个同名配置变量中。我们要创建两个模板文件，分别用于
+渲染纯文本和HTML版本的邮件正文。这两个模板文件都保存在templates文件夹下的mail子文件夹，以便和普通模板区分开。电子邮件的模板中要
+有一个模板参数是用户，因此调用send_mail()函数时都要以关键字参数的形式传入用户。"""
 db = SQLAlchemy(app)
 manager = Manager(app)
 
