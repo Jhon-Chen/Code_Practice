@@ -25,7 +25,7 @@ SECRET_KEY = 'cbu25mi7&&gc6m@@3e03ild+7#ri5+9^!xl#i^^m6av0v^@_8^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['47.100.200.127', 'localhost', '0.0.0.0:8000', '127.0.0.1']
 
 
 # Application definition
@@ -37,16 +37,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Users.apps.UsersConfig', # 注册安装应用
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 添加中间件
+    'Users.middleware.my_middleware',
+    'Users.middleware.my_middleware2',
 ]
 
 ROOT_URLCONF = 'demo.urls'
@@ -108,9 +112,11 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# 本地化设置成中文
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+# 错误时会有时区显示，另外也会自动转换时区时间
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
@@ -123,3 +129,27 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+# 为了解耦合我们不把这个写死 而是使用字符串拼接的方式
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_files')]
+
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://47.100.200.127:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSOPM_CACHE_ALIAS = "default"
+
+
+
+
+
+
+
+
