@@ -48,6 +48,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 添加中间件
+    'Users.middleware.my_middleware',
+    'Users.middleware.my_middleware2',
 ]
 
 ROOT_URLCONF = 'demo.urls'
@@ -130,4 +133,26 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_files')]
 
 
+<<<<<<< HEAD
+=======
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://47.100.200.127:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSOPM_CACHE_ALIAS = "default"
+
+
+
+
+
+
+
+>>>>>>> 1f9a3e6b3f9980742d7786475a9d76c81a2ed777
 

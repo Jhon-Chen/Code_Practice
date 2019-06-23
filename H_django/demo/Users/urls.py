@@ -12,5 +12,20 @@ urlpatterns = [
     url(r'^qs/', views.qs),
     url(r'^get_headers/$', views.get_headers),
     url(r'^demo_view/$', views.demo_view),
+<<<<<<< HEAD
     url(r'^demo_view2/$', views.demo_view2)
+=======
+    url(r'^demo_view2/$', views.demo_view2),
+    url(r'^demo_view3/$', views.demo_view3),
+    # url(r'^register/$', views.register),
+    
+    # 类视图：注册
+    url(r'^register/$', views.RegisterView.as_view(), name='register'),
+    # 类视图装饰
+    url(r'^demo/$', views.my_decorator(views.DemoView.as_view())),
+    url(r'^demo4/$', views.DemoView2.as_view()),
+    url(r'^demo5/$', views.DemoView3.as_view()),
+    url(r'^demo6/$', views.DemoView4.as_view()),
+    url(r'^exm/$', views.exm_view),
+>>>>>>> 1f9a3e6b3f9980742d7786475a9d76c81a2ed777
 ]
