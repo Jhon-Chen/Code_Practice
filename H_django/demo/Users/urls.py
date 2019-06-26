@@ -3,7 +3,7 @@ from . import views
 
 urlpatterns = [
     # url(路径，视图) 使用正则表达式的方式    
-    url(r'^index/$', views.index, name='index'),
+    url(r'^index/$', views.index),
     # 路由解析的顺序是由上至下，有可能上面的路由会屏蔽下面的路由
     url(r'^say/$',views.say, name='say'),
     url(r'^sayhello', views.sayhello),
@@ -12,9 +12,7 @@ urlpatterns = [
     url(r'^qs/', views.qs),
     url(r'^get_headers/$', views.get_headers),
     url(r'^demo_view/$', views.demo_view),
-<<<<<<< HEAD
-    url(r'^demo_view2/$', views.demo_view2)
-=======
+    url(r'^demo_view2/$', views.demo_view2),
     url(r'^demo_view2/$', views.demo_view2),
     url(r'^demo_view3/$', views.demo_view3),
     # url(r'^register/$', views.register),
@@ -27,5 +25,5 @@ urlpatterns = [
     url(r'^demo5/$', views.DemoView3.as_view()),
     url(r'^demo6/$', views.DemoView4.as_view()),
     url(r'^exm/$', views.exm_view),
->>>>>>> 1f9a3e6b3f9980742d7786475a9d76c81a2ed777
+    url(r'^form/$', views.BookView.as_view()),
 ]

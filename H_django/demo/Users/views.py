@@ -1,13 +1,11 @@
 from django.shortcuts import render
 from django.http import HttpResponse 
 from django.http import JsonResponse
-<<<<<<< HEAD
-
+# from django.template import loader, context
+from django.shortcuts import render 
 
 # 注意导包的路径
 from django.core.urlresolvers import reverse 
-
-=======
 from django.shortcuts import redirect
 from django.http import HttpRequest 
 from django.views.generic import View
@@ -15,11 +13,50 @@ from django.utils.decorators import method_decorator
 # 注意导包的路径
 from django.core.urlresolvers import reverse 
 
+from .forms import BookForm
 
->>>>>>> 1f9a3e6b3f9980742d7786475a9d76c81a2ed777
 # Create your views here.
 
+class BookView(View):
+    def get(self, request):
+        form = BookForm()
+        return render(request, 'form.html', {'form': form})
+    
+    def post(self, request):
+        form = BookForm(request.POST)
+        if form.is_valid(): # 验证表单数据
+            print(form.cleaned_data)  # 获取验证后的表单数据
+
+            return HttpResponse("OK")
+        else:
+            return render(request, 'form.html', {'form': form})
+
+
+
+
+"""
 def index(request):
+    # 1.获取模板
+    template = loader.get_template('Users/index.html')
+    # 2.定义上下文
+    context = context(request,{'city': '北京'})
+    # 3.渲染模板
+    return HttpResponse(template.render(context))
+"""
+
+#或者这样子简写
+def index(request):
+    context = {'city': '北京',
+               'adict':{
+                   'name': '西游记',
+                   'author': '吴承恩'
+               },
+                'alist': [1, 2, 3, 4, 5]
+            }
+    return render(request, 'index.html', context)
+
+
+def index2(request):
     """视图：
     request：用于接收请求request对象
     return：响应对象"""
@@ -63,32 +100,24 @@ def qs(request):
 
 def get_headers(request):
     print(request.META['CONTENT_TYPE'])
-<<<<<<< HEAD
-=======
     # request.session['you'] = 'lovely'
     # request = HttpRequest('you', 'tina')
     # request.session.get('name')
->>>>>>> 1f9a3e6b3f9980742d7786475a9d76c81a2ed777
     return HttpResponse('OK')
 
 def demo_view(request):
     # return HttpResponse('jhon tina', status=400)
-<<<<<<< HEAD
     
     response = HttpResponse('jhon tina')
-=======
     response = HttpResponse('jhon tina')
     response.set_cookie('name', value='Tina_M', max_age=6000)
->>>>>>> 1f9a3e6b3f9980742d7786475a9d76c81a2ed777
     response.status_code = 400
     response['jhon'] = 'tina'
     return response 
 
 def demo_view2(request):
-<<<<<<< HEAD
     return JsonResponse({'city': 'beijing', 'subject': 'python'})
 
-=======
     cookie1 = request.COOKIES.get('name')
     print(cookie1)
     return JsonResponse({'city': 'beijing', 'subject': 'python'})
@@ -220,7 +249,6 @@ def exm_view(request):
 
 
 
->>>>>>> 1f9a3e6b3f9980742d7786475a9d76c81a2ed777
 
 
 

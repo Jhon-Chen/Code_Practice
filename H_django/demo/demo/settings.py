@@ -58,7 +58,8 @@ ROOT_URLCONF = 'demo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 修改DIRS值
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -133,8 +134,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_files')]
 
 
-<<<<<<< HEAD
-=======
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
@@ -154,5 +153,4 @@ SESSOPM_CACHE_ALIAS = "default"
 
 
 
->>>>>>> 1f9a3e6b3f9980742d7786475a9d76c81a2ed777
 
