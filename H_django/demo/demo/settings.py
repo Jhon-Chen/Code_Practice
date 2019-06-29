@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Users.apps.UsersConfig', # 注册安装应用
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -147,6 +148,7 @@ CACHES = {
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSOPM_CACHE_ALIAS = "default"
 
+MEDIA_ROOT = os.path.join(BASE_DIR, "static_files/media")
 
 
 

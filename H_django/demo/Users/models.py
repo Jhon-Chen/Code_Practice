@@ -5,7 +5,7 @@ from django.contrib import admin
 
 
 # Create your models here.
-
+"""
 # 图书管理器
 class BookInfoManager(models.Manager):
     def all(self):
@@ -23,7 +23,7 @@ class BookInfoManager(models.Manager):
         # 将数据插入进数据表
         book.save()
         return book
-    
+""" 
 
 
 # 定义图书模型类BookInfo
@@ -33,10 +33,11 @@ class BookInfo(models.Model):
     bread = models.IntegerField(default=0, verbose_name='阅读量')
     bcomment = models.IntegerField(default=0, verbose_name='评论量')
     is_delete = models.BooleanField(default=False, verbose_name='逻辑删除')
-    books = BookInfoManager() 
+    # books = BookInfoManager() 
+    image = models.ImageField(upload_to = 'Users', verbose_name = '图片', null = True)
 
     def pub_date(self):
-            return self.bpub_data.strftime("%Y年%m月%d日")
+        return self.bpub_data.strftime("%Y年%m月%d日")
         # 设置方法字段在admin中显示的标题
     pub_date.short_description = '发布日期'
 
@@ -52,7 +53,7 @@ class BookInfo(models.Model):
     def __str__(self):
         """定义每个数据对象的显示信息"""
         return self.btitle
-
+    
     
 # 定义影响模型类HeroInfo
 class HeroInfo(models.Model):
@@ -89,6 +90,7 @@ class MyModel(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.SET(get_sentinel_user),
     )
+
 
 
 

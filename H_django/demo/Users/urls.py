@@ -1,5 +1,6 @@
 from django.conf.urls import url 
 from . import views
+from rest_framework.routers import DefaultRouter 
 
 urlpatterns = [
     # url(路径，视图) 使用正则表达式的方式    
@@ -25,5 +26,17 @@ urlpatterns = [
     url(r'^demo5/$', views.DemoView3.as_view()),
     url(r'^demo6/$', views.DemoView4.as_view()),
     url(r'^exm/$', views.exm_view),
-    url(r'^form/$', views.BookView.as_view()),
+    # url(r'^books/$', views.BooksAPIView.as_view()),
+    # url(r'^books/(?P<pk>\d+)/$', views.BookAPIView.as_view()),
 ]
+
+router = DefaultRouter()  # 可以处理视图的路由器
+router.register(r'books', views.BookInfoViewSet)  # 向路由器中注册视图集
+
+urlpatterns += router.urls  # 将路由器中的所有路由信息追加到Django路由列表中
+
+
+
+
+
+

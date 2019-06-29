@@ -29,7 +29,7 @@ class BookInfoAdmin(admin.ModelAdmin):
     # fields = ['btitle', 'bpub_data']
     fieldsets = (
         ('基本', {'fields': ['btitle', 'bpub_data']}),
-        ('高级', {'fields': ['bread', 'bcomment'], 
+        ('高级', {'fields': ['bread', 'bcomment', 'image'], 
                   'classes': ('collapse',)})  # 是否折叠显示
     )
     inlines = [HeroInfoStackInline]
